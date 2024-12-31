@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #373737;
+    }
+    .button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap:35px;
+       position: relative;
+        
+    }
+    button{
+        width: 150px;
+        height: 60px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    button:first-child{
+        border: 2px solid #42eb0f;
+        color: #42eb0f;
+        box-shadow: 0 0 20px 0 #42eb0f;
+
+    }
+   button::before{
+        content: '';
+        height:55px ;
+        background-color: #42eb0f;
+       top: 0px;
+       bottom: 0px;
+       left: 0px;
+       width: 3px;
+        position: absolute;
+        z-index: -1;
+        transition: 0.3s ease-out;
+        
+    }
+  
+    button:first-child::before{
+        border: 2px solid #42eb0f;
+    }
+    button::after{
+        position: absolute;
+        content: '';
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        height: 55px;
+        width:145px ;
+        z-index: -1;
+        background-color: red;
+        color: white;
+        transition: 0.3s ease-out;
+
+    }
+    button:first-child::after{
+        border: 2px solid #42eb0f;
+    }
+    button:hover::before{
+        left: calc(100%-3px);
+    }
+    button:hover::after{
+        right: calc(100% - 3px);
+    }
+    button:hover{
+        color: #000;
+    }
+    button:first-child:hover{
+        background-color: #42eb0f;
+        box-shadow: 0 0 20px 0 #42eb0f;
+    }
+    </style>
+</head>
+<body>
+    <div class="button">
+        <button>Home</button>
+        <button>About</button>
+        <button>Service</button>
+    </div>
+</body>
+</html>
